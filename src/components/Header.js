@@ -1,14 +1,16 @@
 import React from "react"
-import styles from "./Header.module.css"
 import Nav from "../components/Nav"
+import Img from "gatsby-image"
 
-const Header = () => {
+import styles from "./Header.module.css"
+
+const Header = ({ logo }) => {
   return (
     <header className={styles.header}>
-      <h1>My Name</h1>
+      <Img fixed={logo} className={styles.logo} />
+      <h1 className={styles.title}>lorem ipsum blah blah blah</h1>
       <Nav />
     </header>
   )
 }
-
 export default Header
