@@ -17,12 +17,13 @@ exports.onCreateNode = ({ node, getNode }) => {
     }
   }
 }
+
 exports.createPages = ({ actions: { createPage } }) => {
   pages.forEach(page => {
     createPage({
       path: page,
       component: path.resolve(`./src/templates/photo-series.js`),
-      context: { slug: page },
+      context: { slug: page, pathRegex: `/content/${page}/` },
     })
   })
 }
